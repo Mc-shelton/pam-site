@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            outline: none;
+        }
+        body{
+            background-color: rgb(45, 0, 128,0.1);
+        }
+        #container{
+            width: 60%;
+            height: 400px;
+            border: none;
+            margin-top: 140px;
+            margin-left: 20%;
+            background-color: white;
+        }
+        #container_1{
+            height:fit-content;
+            width: fit-content;
+            margin-top: 75px;
+            float: right;
+            overflow: hidden;
+            border: 1px solid grey;
+            padding: 10px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-right: 11.5%;
+        }
+        #container_2{
+            height: 400px;
+            width: 56%;
+            background: url('images/pam\ logo.png') no-repeat 50% 55% ;
+            background-size: 40%;
+            float: left;
+        }
+        input,button{
+            display: block;
+            margin-top: 20px;
+        }
+        input{
+            width: 150px;
+            margin-top: 3px;
+        }
+        button{
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            background-color: rgb(39, 85, 155);
+            border: none;
+            color: white;
+        }
+        button:hover{
+            cursor: pointer;
+        }
+        @media (max-width:650px){
+            body{
+                overflow: none;
+            }
+           #container_1{
+               margin-top: -35px;
+               padding-right: 20px;
+           }
+           #container_2{
+               height: 180px;
+               background-size: 80%;
+               width: 160px;
+           }
+           #container_1,#container_2{
+               margin-left: 20px;
+               float: none;
+           }
+           input{
+               width: 100%;
+               border: 1px solid grey;
+           }
+
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="container_2">
+
+        </div>
+        <div id="container_1">
+            <form action="sign_up.php" method="POST">
+    <label for="admNo">Reg Number</label>
+    <input type="text" id="admNo">
+    <br>
+    <label for="pass">Password</label>
+    <input type="text" id="pass">
+    <button id="buton" type="button">Login</button>
+</form>
+</div>
+    </div>
+</body>
+
+</html>

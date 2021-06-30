@@ -1,0 +1,691 @@
+html {
+    scroll-behavior: smooth;
+
+    margin: 0;
+}
+
+@font-face {
+    font-family: elephant;
+    src: url('images/ELEPHNT.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: calibri;
+    src: url('images/calibri.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: agency fb;
+    src: url('images/AGENCYR.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: colonna mt;
+    src: url('images/COLONNA.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: bell MT;
+    src: url('images/BELL.TTF') format('truetype');
+}
+
+body {
+    font-family: calibri;
+    margin: 0;
+    background-color: #f4f4f4;
+
+
+}
+
+.div,
+.div1 {
+    float: left;
+}
+
+.div1 {
+    width: 60%;
+    margin-left: 20px;
+}
+
+button {
+    outline: none;
+}
+
+hr {
+    transition: 0.1s ease-in;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    opacity: 100%;
+}
+
+header li {
+    float: left;
+    display: inline;
+    padding: 0 20px 0 20px;
+}
+
+.logo {
+    display: none;
+    position: absolute;
+    opacity: 100%;
+    z-index: 1;
+
+    top: 40%;
+    left: 25%;
+}
+
+#showcase {
+    min-height: 200px;
+    background: linear-gradient(to right, rgb(252, 184, 153), rgb(68, 20, 90));
+    background-size: 110%;
+    text-align: center;
+    position: relative;
+}
+
+#showcase .overlay {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(0, 0, 0, 0.3)
+}
+
+#showcase #navigation {
+    width: 100%;
+    height: 50%;
+    position: absolute;
+    overflow: none;
+    margin-top: 30px;
+
+}
+
+#navigation #branding {
+    float: none;
+    width: 170px;
+    height: 120px;
+    margin-left: 40%;
+    overflow: hidden;
+}
+
+#navigation #branding img {
+    vertical-align: middle;
+    float: left;
+    margin: 0;
+    position: relative;
+}
+
+#navigation #branding h1 {
+    color: white;
+    font-family: elephant;
+    margin-left: -90px;
+    float: left;
+    margin-top: 30px;
+
+}
+
+#navigation #branding hr {
+    margin-left: -88px;
+    float: left;
+    width: 80px;
+    margin-top: 70px;
+}
+
+
+#navigation nav {
+    margin-top: 10px;
+    width: 100%;
+    margin-left: 0;
+}
+
+#navigation nav ul {
+    overflow: hidden;
+    width: 60%;
+    margin-left: 22%;
+}
+
+#navigation nav a {
+    font-size: 90%;
+    color: white;
+    text-transform: uppercase;
+    font-family: calibri;
+    text-decoration: none;
+}
+
+#navigation p {
+    color: white;
+    margin-top: 50px;
+    margin-left: -70px;
+}
+
+#showcase p {
+    color: white;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: 25%;
+}
+
+#show_nav {
+    margin-left: 80%;
+    color: white;
+    width: 45px;
+    border: none;
+    z-index: 1;
+    position: absolute;
+    background-color: transparent;
+    display: none;
+    transition: 0.5s ease-in;
+    margin-top: 10px;
+}
+
+#media_nav {
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+    margin: 0;
+    display: none;
+}
+
+#media_nav li {
+    margin-top: 20px;
+}
+
+#media_nav ul {
+    margin-top: 40%;
+    text-align: center;
+}
+
+#media_nav a {
+    text-decoration: none;
+    font-size: 17px;
+    color: rgb(85, 85, 85);
+}
+
+header .highlight,
+header .current a {
+    color: #e8491d;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #cccccc;
+    font-weight: bold;
+}
+
+.section_2 {
+    width: 300px;
+    border: 2px solid black;
+    margin-left: 1%;
+    padding: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+    float: left;
+}
+
+.title {
+    margin-left: 20%;
+    margin-top: 30px;
+    border-left: 4px solid red;
+    text-transform: uppercase;
+    padding-left: 5px;
+    font-size: 13px;
+    font-family: agency FB;
+
+
+}
+
+section .title {
+    margin-left: 0;
+}
+
+section .row {
+    border: 2px solid grey;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    padding-bottom: 30px;
+    float: left;
+
+}
+
+.pics {
+    height: 100px;
+    width: 100px;
+    position: relative;
+    border-radius: 5px;
+    float: left;
+    border: 1px solid grey;
+    margin-left: 10%;
+    overflow: hidden;
+    margin-top: 30px;
+}
+
+
+.pics:hover p {
+    display: block;
+    margin-top: 50%;
+    animation: pics 0.7s ease-in-out;
+}
+
+.pics a {
+    text-decoration: none;
+    text-transform: lowercase;
+
+}
+
+.pics p {
+    margin-top: 5%;
+    color: grey;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    position: absolute;
+    background-color: rgba(253, 252, 244, 0.897);
+    border-radius: 5px;
+    margin-top: 74%;
+    width: 100%;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 12px;
+    display: block;
+}
+
+@keyframes pics {
+    from {
+        margin-top: 70%;
+    }
+
+    to {
+        margin-top: 50%;
+    }
+
+}
+
+#section_1 {
+    margin-top: 50px;
+
+}
+
+#section_1 ul {
+    margin-left: 40px;
+    list-style: circle;
+}
+
+.require {
+    float: right;
+    padding-left: 20px;
+    border-left: 2px solid rgb(0, 89, 255);
+    margin-top: -300px;
+    font-size: 13px;
+}
+
+.require h1 {
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+
+#section_1 p {
+    text-align: center;
+    margin-top: 50px;
+
+}
+
+#section_1 .require p {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+}
+
+.boks {
+    width: 120%;
+    margin-top: 50px;
+    padding-bottom: 20px;
+    overflow: hidden;
+}
+
+.boks .box {
+    text-align: center;
+    float: left;
+    margin-left: 20px;
+    width: 250px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.box hr {
+    width: 90%;
+}
+
+.boks .box h1 {
+    text-transform: uppercase;
+    font-size: 15px;
+    position: relative;
+}
+
+.boks .box p {
+    font-size: 13px;
+}
+
+.boks .box li {
+    font-size: 13px;
+    padding-right: 20px;
+}
+
+.circle_logo {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border-radius: 50%;
+    border: 1px solid blue;
+    margin-left: 45px;
+}
+
+footer {
+    padding: 20px;
+    min-height: 200px;
+    color: #ffff;
+    background-color: #171a1d;
+    text-align: center;
+    align-items: center;
+    border-top: 2px solid #e8491d;
+
+
+}
+
+footer .column2 {
+    text-align: left;
+}
+
+#email {
+    width: 20%;
+    height: 35px;
+    outline: none;
+}
+
+.send {
+    width: 10%;
+    border: none;
+    height: 40px;
+    outline: none;
+    background: red;
+}
+
+footer .container {
+    font-size: 15px;
+    border: none;
+}
+
+
+footer .text {
+    height: 70px;
+    text-align: top;
+    width: 300px;
+
+    align-self: center;
+    display: block;
+}
+
+footer .text:hover {
+    border: 2px saddlebrown solid;
+    width: 300px;
+
+}
+
+footer .button {
+    display: block;
+    background-color: rgb(18, 116, 116);
+    border: none;
+    margin-top: 5px;
+    width: 308px;
+    color: whitesmoke;
+    height: 30px;
+}
+
+footer .button:hover {
+    border: 2px grey solid;
+    background-color: #35424a;
+    cursor: pointer;
+
+}
+
+footer .email {
+    display: block;
+    height: 30px;
+    width: 300px;
+    margin-top: 5px;
+}
+
+footer .email:hover {
+    border: 2px saddlebrown solid;
+}
+
+footer .box_1 {
+    float: left;
+    width: 60%;
+    padding: 10px;
+    text-align: left;
+    border-left: 2px seagreen solid;
+    margin-top: 51px;
+    padding: 0 0 0 35px;
+
+}
+
+footer .box h4 {
+    float: left;
+}
+
+footer .top {
+    float: right;
+    text-transform: uppercase;
+    background: grey;
+    width: 50px;
+    height: 25px;
+    text-align: center;
+    padding-top: 6px;
+    font-size: 10px;
+}
+
+footer .top a {
+    text-decoration: none;
+    color: white;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    border: 1px solid blue;
+    max-height: 450px;
+
+}
+
+
+
+.boxes {
+    font-family: bell MT;
+    margin-top: 800px;
+    font-size: 13px;
+    position: relative;
+}
+
+.boxes .box1 {
+    float: left;
+    position: relative;
+    width: 30%;
+    padding: 10px;
+    text-align: center;
+}
+
+.boxes .box1 img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+}
+
+#adress .vertical_bar {
+
+    padding-top: 10px;
+    min-height: 30px;
+    position: relative;
+    overflow: hidden;
+    width: 95%;
+}
+
+.vertical_bar img {
+    width: 20px;
+    border-radius: 50%;
+}
+
+.vertical_bar ul {
+    margin-left: 50px;
+}
+
+.vertical_bar li {
+    float: left;
+    margin-left: 10px;
+}
+
+.vertical_bar a {
+    text-decoration: none;
+}
+
+.vertical_bar img:hover {
+    width: 30px;
+    height: 30px;
+}
+
+
+@keyframes p1 {
+    from {
+        margin-left: -50%;
+    }
+
+    to {
+        margin-left: 0;
+    }
+}
+
+@media (max-width:400px) {
+    html {}
+
+    #navigation {
+        margin-left: 0;
+    }
+
+    #navigation #branding {
+        margin-left: 26%;
+    }
+
+    #navigation nav {
+        display: none;
+    }
+
+    #show_nav {
+        display: inline;
+    }
+
+    .div,
+    .div1 {
+        float: none;
+        display: block;
+        overflow: hidden;
+        position: relative;
+    }
+
+
+    .section_2 {
+        border: 2px solid purple;
+        width: 85%;
+    }
+
+    .div1 {
+        margin: 0;
+        width: unset;
+        padding-left: 5px;
+        padding-right: 5px;
+
+    }
+
+    .require {
+        position: relative;
+        margin-top: 0;
+        overflow: hidden;
+    }
+
+    .boks {
+        width: 100%;
+        margin: 0;
+        padding-top: 30px;
+
+    }
+
+    .boks .box {
+        width: unset;
+        margin: unset;
+        padding-bottom: 20px;
+
+    }
+
+    .boks .box p {
+        padding-left: 20px;
+        padding-right: 20px;
+
+    }
+
+    .boks .box .title {
+        text-align: left;
+        margin-left: 30%;
+        width: unset;
+
+
+    }
+
+    .circle_logo {
+        margin-left: 26%;
+    }
+
+    footer .column2 {
+        text-align: center;
+    }
+
+    #email {
+        width: 60%;
+    }
+
+    .send {
+        width: 30%;
+    }
+
+    footer .container {
+
+        width: 100%;
+    }
+
+    .boxes {
+        margin-top: 0;
+
+    }
+
+    footer .box {
+        margin-left: -5px;
+    }
+
+    footer .top {
+        margin-top: -5px;
+        width: 55px;
+        height: 35px;
+        padding-top: 20px;
+        border-radius: 50%;
+        background: linear-gradient(to bottom, rgba(128, 0, 128, 0.6), rgba(0, 0, 0, 0.836));
+    }
+}

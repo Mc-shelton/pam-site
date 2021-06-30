@@ -1,0 +1,8 @@
+{
+    "workbench.view.alwaysShowHeaderActions": true,
+    "workbench.editor.enablePreviewFromQuickOpen": true,
+    "scm.alwaysShowActions": true,
+    "scm.alwaysShowRepositories": true,
+    "extensions.closeExtensionDetailsOnViewChange": true,
+    "debug.showSubSessionsInToolBar": true
+}

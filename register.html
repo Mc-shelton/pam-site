@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.cs">
+    <title>Document</title>
+    <style type="stylesheet">
+        </style>
+</head>
+<body>
+    
+
+    <div id="reg_form">
+        <form action="register.php" method="POST" onsubmit="return checked()">
+            <fieldset>
+                <legend><img src="images/pam logo.png" style="display: flex;margin-top: 40px;height: 100px;" alt=""></legend>
+                <h2>REGISTRATION FORM</h2>
+
+                <h5>STUDENT PROFILE</h5>
+                <p style="text-align: left;">
+                    <label for="Name">First Name
+                        <input name="First_Name" type="text" maxlength="30" required>
+                        &nbsp; &nbsp; &nbsp; Last Name <input type="text" name="Last_Name" required></label> <br><br>
+                    <label for="gender">
+                        Gender <select name="gender" id="gender" required>
+                            <option selected disabled>~select gender~</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </label> <br><br>
+                    TEL No. <input type="number" name="telephone" required> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email Address: <input type="email" name="email" placeholder="example@gmail.com" required><br> <br>
+                    Present Residence;<input type="text" name="res_presnt" required><br><br> Permanent Residence <input type="text" name="res_perm" required><br><br>
+                    Nationality: <input type="text" name="nationality" id="nationality" required><br><br>
+                    Date of Birth; <input type="date" name="DOB" required><br><br>
+                    Marital Status: <select name="mar_status" id="mar_status">
+                        <option selected disabled>~select status~</option>
+                        <option value="Maried" required>Maried</option>
+                        <option value="Single">Single</option>
+                        <option value="Divorsed">Divorsed</option>
+                        <option value="Widow">widow</option>
+                        <option value="Widower">widower</option>
+                    </select><br><br>
+                    Learning Center (versity applying from): <select name="institution" id="institution" required>
+                        <option selected disabled>~select institution~</option>
+                        <option value="MMU">Multimedia University</option>
+                        <option value="UON">University of Nairobi</option>
+                        <option value="JKUAT">Jomo Kenyatta University</option>
+                        <option value="TUK">Technical University of Kenya</option>
+                        <option value="null"></option>
+                        <option value="null"></option>
+                        <option value="null">private lessons</option>
+                    </select><br><br>
+                    Are you a student currently?<br>
+                    No <input value="No" name="student" type="radio" onchange="drop_no()" required>
+                    Yes <input value="Yes" type="radio" name="student" onchange="drop_yes()" required> <br><br>
+
+                <p id="student_inst" style="text-align: left;padding-left: 40px;">
+
+                    Name of Institution <input type="text" name="stud_inst"><br><br>
+                    Year/Level of Study <input type="text" name="stud_level"><br>
+                </p>
+
+                <script>
+                    var student_inst = document.getElementById('student_inst');
+                    var optional = document.getElementsByName('student');
+
+                    student_inst.style.display = 'none';
+
+                    function drop_yes() {
+                        if (student_inst.style.display == 'none') {
+                            student_inst.style.display = 'block';
+                        }
+                    }
+
+                    function drop_no() {
+                        if (student_inst.style.display == 'block'); {
+                            student_inst.style.display = 'none';
+
+
+                        }
+
+                    }
+
+                    console.log(optional)
+                    if (optional == 'Yes') {
+                        student_inst.style.display = 'none';
+                    }
+                </script>
+                </p>
+                <button type="submit">submit</button>
+                <button onclick="close_disp()" type="button">close</button>
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>
