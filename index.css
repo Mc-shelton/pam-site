@@ -163,9 +163,47 @@ button:hover {
     font-size: 16px;
 
 }
+#reg_strip a:hover{
+    cursor: pointer;
+}
 
+#reg_strip #searchBar{
+    border: 1px solid grey;
+    height:20px;
+    width: 200px;
+    float: right;
+    border-radius: 5px;
+    margin-top: 14px;
+    margin-right: 5px;
+    outline: none;
+    background: none;
+    color: grey;
+    display: none;
+}
+#reg_strip #searchBar:hover{
+    cursor: text;
+}
 
+#reg_strip #help_drop{
+    background-color: #35424a;
+    height: fit-content;
+    width: 200px;
+    position: absolute;
+    z-index: 3;
+    top: 45px;
+    overflow: hidden;
+    right: 0px;
+    padding: 20px;
+    padding-left: 40px;
+    display: none;
+}
 
+#reg_strip #help_drop button{
+    float: left;
+    width: 70px;
+    height: 30px;
+    font-size: 12px;
+}
 header li {
     float: left;
     display: inline;
@@ -723,7 +761,7 @@ header a:hover {
     width: 250px;
     margin-left: 20px;
     margin-top: 20px;
-    height: 300px;
+    height: 330px;
     border: 1px solid grey;
     border-radius: 10px;
     padding-left: 10px;
@@ -733,7 +771,7 @@ header a:hover {
 
 .vr {
     border-right: 2.5px solid rgb(0, 110, 255);
-    height: 200px;
+    height: 250px;
     float: left;
 }
 
@@ -744,9 +782,14 @@ header a:hover {
 
 .place_pic {
     width: 230px;
-    height: 100px;
+    height: 100%;
     border-radius: 5px;
     margin-left: 7px;
+}
+.place_pic iframe{
+    height: 100%;
+    width: 100%;
+    border-radius:5px ;
 }
 
 footer {
@@ -903,7 +946,6 @@ footer .top a {
     #reg_strip #a {
         display: none;
     }
-
     #showcase {
         background-position: 0 0;
         background-size: 200%;

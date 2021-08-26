@@ -1,68 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Document</title>
 
     <style>
-        .circular-progress {
-            position: relative;
-            display: inline-block;
-            margin-right: 20px;
-        }
+      .circular-progress {
+          position: relative;
+          display: inline-block;
+          margin-right: 20px;
+      }
 
-        .circular-progress-circle {
-            position: relative;
-            width: 200px;
-            height: 200px;
-            background: red;
-            border-radius: 50%;
-            overflow: hidden;
-        }
+      .circular-progress-circle {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          background: red;
+          border-radius: 50%;
+          overflow: hidden;
+      }
 
-        .segment {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100vw;
-            height: 100vw;
-            background: blue;
-            transform-origin: 0 0 ;
-        }
-        .circular-progress-inner {
-            position: absolute;
-            left: 50%;
-            top: 50%;
-            width: 180px;
-            height: 180px;
-            transform: translateX(-50%) translateY(-50%);
-            background: #fff;
-            border-radius: 50%;
-            box-shadow: inset rgba(34,36,38,0.15) 0px 0px 3px 2px;
-        }
-        .circular-progress-value{
-            position: absolute;
-            font-size: 400%;
-            font-family: roboto;
-            font-weight: bold;
-            left: 50%;
-            top: 50%;
-            transform: translateX(-50%) translateY(-50%);*/
-        }
+      .segment {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 100vw;
+          height: 100vw;
+          background: blue;
+          transform-origin: 0 0 ;
+      }
+      .circular-progress-inner {
+          position: absolute;
+          left: 50%;
+          top: 50%;
+          width: 180px;
+          height: 180px;
+          transform: translateX(-50%) translateY(-50%);
+          background: #fff;
+          border-radius: 50%;
+          box-shadow: inset rgba(34,36,38,0.15) 0px 0px 3px 2px;
+      }
+      .circular-progress-value{
+          position: absolute;
+          font-size: 400%;
+          font-family: roboto;
+          font-weight: bold;
+          left: 50%;
+          top: 50%;
+          transform: translateX(-50%) translateY(-50%);*/
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="circular-progress">
-        <div class="circular-progress-circle">
-            <div class="segment" style="transform: rotate(0deg) skew(0deg);"></div>
-            <div class="segment" style="transform: rotate(90deg) skew(0deg);"></div>
-            <div class="segment" style="transform: rotate(180deg) skew(0deg);"></div>
-            <div class="segment" style="transform: rotate(270deg) skew(90deg);"></div>
-        </div>
-        <div class="circular-progress-inner"></div>
-        <div class="circular-progress-value">75%</div>
+      <div class="circular-progress-circle">
+        <div class="segment" style="transform: rotate(0deg) skew(0deg)"></div>
+        <div class="segment" style="transform: rotate(90deg) skew(0deg)"></div>
+        <div class="segment" style="transform: rotate(180deg) skew(0deg)"></div>
+        <div
+          class="segment"
+          style="transform: rotate(270deg) skew(90deg)"
+        ></div>
+      </div>
+      <div class="circular-progress-inner"></div>
+      <div class="circular-progress-value">75%</div>
     </div>
-</body>
+
+    <input id="fileupload" type="file" name="files[]" multiple />
+    <div class="progress">
+      <div class="meter" style="width: 0%"></div>
+    </div>
+    <div class="data"></div>
+    <div id="some-image"></div>
+    <script>
+      $(function () { $('#fileupload').fileupload({ url: '/echo/json/',
+      maxChunkSize: 1048576, maxRetries: 3, dataType: 'json', multipart: false,
+      progressall: function (e, data) { //progress }, add: function (e, data) {
+      data.context = $('
+      <p />
+      ').text('Uploading...').appendTo('.data'); data.submit(); }, done: function
+      (e, data) { data.context.text('Upload finished.'); }, fail: function (e,
+      data) { data.context.text('Upload failed.'); }
+      }).bind('fileuploadprocessalways', function(e, data) { var canvas =
+      data.files[0].preview; var dataURL = canvas.toDataURL();
+      $("#some-image").css("background-image", 'url(' + dataURL +')'); }) });
+    </script>
+  </body>
 </html>
+
+User: socialcico_shelton
+Database: socialcico_apcs_assignment
+password: 1429@Shelton.

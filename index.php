@@ -23,14 +23,14 @@ session_start();
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About us</a></li>
                 <li><a href="curriculum.html">Curriculum</a></li>
-                <li><a onclick="disabled()">lessons</a></li>
-                <li><a onclick="disabled()">library</a></li>
+                <li><a href="gallery.html">lessons</a></li>
+                <li><a href="gallery.html">library</a></li>
                 <li><a href="#contact">contact</a></li>
                 <li><a href="#home">log in</a></li>
                 <br>
                 <br>
                 <br>
-                <li><a href="#home">Jornals & Books</a></li>
+                <li><a href="#home" href="gallery.html">Journals & Books</a></li>
             </ul>
         </nav>
 
@@ -46,12 +46,52 @@ session_start();
         <button onclick="register()" type="button" id="reg1">Register</button>
         <button onclick="window.location = 'signin.html'" type="button" id="reg">Sign in</button>
 
-        <a href="#media"><img src="images/images-36.webp"></a>
-        <a href="#media"><img style="border: 1px solid black; width: 17px; height: 17px;" src="images/images-2.png"></a>
-        <a id="spec" href="#media"><img src="images/pam logo.png">
+        <a onclick="help_()"><img src="images/images-36.webp"></a>
+        <div id="help_drop">
+            <p style="width: 100%; text-align:center; margin:unset; "><b>Need Help?</b><br> send us a message </p>
+            <br>
+            <br><br>
+            <label for="email_help">Email</label><br>
+            <input name="email_help" style="outline: none;" id="email_help" type="email"><br><br>
+            <label for="question">Question</label><br>
+            <textarea style="max-height: 150px; height:150px; max-width: 170px; width:170px; outline:none;"></textarea><br>
+            <button disabled>SEND</button>
+            <button onclick="close_disp()">CLOSE</button>
+
+        </div>
+        <a onclick="search_()"><img style="border: 1px solid black; width: 17px; height: 17px;" src="images/images-2.png"></a>
+        <input type="search" id="searchBar">
+        <script>
+            var true__ = true
+
+            function help_() {
+                if (help_drop.style.display == 'none' || true__) {
+                    help_drop.style.display = 'block';
+                    true__ = false
+                } else {
+                    help_drop.style.display = 'none';
+                }
+            }
+
+            var searchBar = document.getElementById('searchBar');
+            var firstTrue = true
+
+
+            function search_() {
+
+                if (searchBar.style.display == 'none' || firstTrue) {
+                    searchBar.style.display = 'block';
+                    firstTrue = false;
+                } else {
+                    searchBar.style.display = 'none';
+                }
+            }
+        </script>
+
+        <a id="spec" href="about.html"><img src="images/pam logo.png">
             <p><span style="color: rgb(0, 47, 255); font-weight: bold;">Premier</span> Academy of Music</p>
         </a>
-        <p><a id="a" href="#media">Jornals & Books</a></p>
+        <p><a id="a" href="#media" onclick="disabled()">Journals & Books</a></p>
     </div>
     <header id="showcase">
 
@@ -67,10 +107,10 @@ session_start();
                     <li><a href="index.html">Home</a></li>
                     <li><a href="about.html">About us</a></li>
                     <li><a href="curriculum.html">Curriculum</a></li>
-                    <li><a onclick="disabled()">lessons</a></li>
-                    <li><a onclick="disabled()">library</a></li>
+                    <li><a href="gallery.html">lessons</a></li>
+                    <li><a href="gallery.html">library</a></li>
                     <li><a href="#contact">contact</a></li>
-                    <li><a href="#home">log in</a></li>
+                    <li><a href="signin.html">log in</a></li>
                 </ul>
             </nav>
 
@@ -106,7 +146,7 @@ session_start();
                     tt_overlay.style.display = 'block';
                 }
                 uploadMessage();
-                </script>";
+                </>";
                     echo "<p>" . $_SESSION['status'] . "</p>";
                     unset($_SESSION['status']);
                 }
@@ -119,7 +159,7 @@ session_start();
             <div id="list">
                 <p>no intaking versities at the moment</p>
             </div>
-            <button onclick="register()" type="button">register</button>
+            <button onclick="register()" type="button" style="color: grey;" disabled>register</button>
             <button onclick="close_disp()" type="button">close</button>
         </div>
 
@@ -273,26 +313,23 @@ session_start();
                 <p>5TH PAM joint meeting</p>
             </div>
 
-            <div class="paragraph">One on one intruction is available for piano, violin, cello flute,
-                saxophone, guitar, and voice.
+            <div class="paragraph"> Want Violin Lessons and its too expensive you cannot afford?
+                well Premier Academy of Music is here for you
                 <br>
                 <br>
-                we have students learning just for fun and students who excell
-                in certificat of Merit, ABRSM and competitions.
+                We offer a convenient course on violin, in three distinctions, beginners, intermediate, and advanced stage.
                 <br>
                 <br>
-                Our experinced and nurturing teachers have a proven track record helping
-                students reach their musicsl goals.
+                The school also allows you to opt for private, or on campus lessons as you will consider convenient for you.
             </div>
             <button type="submit" class="box_button">learn more</button>
             <div class="testimony">
                 <p style="margin-top: 0px;font-size: 30px;"><i><b>"</b></i></p>
-                <p style="margin-top: -30px;"><i>Obvious musical talents asid, our teacher is remarkably patient, comasssionate, and
-                        creative when it comes to teaching... We are so glad we
-                        found PAM. We refer all of our friends to PAM
+                <p style="margin-top: -30px;"><i>I joined as an amurture, leave alone a beginner,
+                        but now a year later i feel like i should be the one teachig the advanced team. this is how much and fast I have grown in PAM
                         <br>
                         <br>
-                        <span style="font-size: 10px;">~Stephen L.</span>
+                        <span style="font-size: 10px;">~Carlos .</span>
                     </i>
                 </p>
             </div>
@@ -339,31 +376,29 @@ session_start();
                 <p>5TH PAM joint meeting</p>
             </div>
 
-            <div class="paragraph">One on one intruction is available for piano, violin, cello flute,
-                saxophone, guitar, and voice.
+            <div class="paragraph">
+
+                One thing that holds our name, is our vocal community. In this large family, we have a students from various campuses,
+                who just come together to sing
                 <br>
                 <br>
-                we have students learning just for fun and students who excell
-                in certificat of Merit, ABRSM and competitions.
+                Beside this, the school also offer quality vocal trainings.
                 <br>
                 <br>
-                Our experinced and nurturing teachers have a proven track record helping
-                students reach their musicsl goals.
+                These vocal trainings are offered both on private and on campus venues as would be convenient for students
             </div>
             <button type="submit" class="box_button">learn more</button>
             <div class="testimony">
                 <p style="margin-top: 0px;font-size: 30px;"><i><b>"</b></i></p>
-                <p style="margin-top: -30px;"><i>Obvious musical talents asid, our teacher is remarkably patient, comasssionate, and
-                        creative when it comes to teaching... We are so glad we
-                        found PAM. We refer all of our friends to PAM
+                <p style="margin-top: -30px;"><i>
+                        I like vocal singing, but of all communities ive found, PAM remains to be not only the best, but home
                         <br>
                         <br>
-                        <span style="font-size: 10px;">~Stephen L.</span>
+                        <span style="font-size: 10px;">~ Shelton O.</span>
                     </i>
                 </p>
             </div>
         </div>
-
     </section>
     <br>
     <br>
@@ -381,26 +416,23 @@ session_start();
     <br>
     <br>
     <br>
-
-    <iframe src="images/VID-20191030-WA0009.mp4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
     <section id="gallery">
-        <div class="gallery_box">
+        <div class="gallery_box" onclick="frame()">
             <p style="color: rgb(230, 63, 2);font-weight: bold; margin-top: 0;letter-spacing: 5px; padding: 0;">|music</p>
-            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM Orchestra</p>
+            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM staff</p>
             <div class="inner">
                 <div class="vr"></div>
                 <h5 style="margin: 0;margin-left: 7px; color: rgb(0, 110, 255);">YouTube</h5>
                 <p style="margin-top: 0;margin-left: 7px; font-size: 12px;"><span style="font-size: 12px; font-weight: bold;">
-                        I Vow to Thee my Country (Piano and Violin)</span>
+                        Today While The Sun Shines</span>
                     <br>
                     <br>
-                    This is a live performance during the PAM Joint session at the Technical University
-                    of Kenya on the 7th of February 2021.
+                    This was performed by the PAM staff and recorded on a PAM excucutive meeting on 7th of February 2021.
                 </p>
 
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/gU3KRYHYtSY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </div>
                 </a>
@@ -422,7 +454,8 @@ session_start();
                 </p>
 
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/RHc6s2MYFgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </div>
                 </a>
@@ -438,13 +471,14 @@ session_start();
                 <p style="margin-top: 0;margin-left: 7px; font-size: 12px;"><span style="font-size: 12px; font-weight: bold;">
                         I Vow to Thee my Country (Piano and Violin)</span>
                     <br>
-                    <br>
-                    This is a live performance during the PAM Joint session at the Technical University
-                    of Kenya on the 7th of February 2021.
+                    <br>This was performed by The PAM Orchestra
+                    Piano - Bill Eddy Violin - Baruch Cheleket - Nicasio Njiru Guitar- George Onkoba
+
                 </p>
 
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/c-T5nurTA-g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </div>
                 </a>
@@ -454,20 +488,20 @@ session_start();
 
         <div class="gallery_box">
             <p style="color: rgb(230, 63, 2);font-weight: bold; margin-top: 0;letter-spacing: 5px; padding: 0;">|music</p>
-            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM Orchestra</p>
+            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM Media Dep</p>
             <div class="inner">
                 <div class="vr"></div>
                 <h5 style="margin: 0;margin-left: 7px; color: rgb(0, 110, 255);">YouTube</h5>
                 <p style="margin-top: 0;margin-left: 7px; font-size: 12px;"><span style="font-size: 12px; font-weight: bold;">
-                        I Vow to Thee my Country (Piano and Violin)</span>
+                        PAM Promotion Video</span>
                     <br>
                     <br>
-                    This is a live performance during the PAM Joint session at the Technical University
-                    of Kenya on the 7th of February 2021.
+                    do you love music? PAM is the solution
+                    Be it singing playing instruments and all the music stuff you could. Its you golden opportunity
                 </p>
-
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/M_q97QxbxmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
                     </div>
                 </a>
@@ -476,20 +510,12 @@ session_start();
         </div>
         <div class="gallery_box">
             <p style="color: rgb(230, 63, 2);font-weight: bold; margin-top: 0;letter-spacing: 5px; padding: 0;">|music</p>
-            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM Orchestra</p>
+            <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">The PAM joint pic</p>
             <div class="inner">
                 <div class="vr"></div>
-                <h5 style="margin: 0;margin-left: 7px; color: rgb(0, 110, 255);">YouTube</h5>
-                <p style="margin-top: 0;margin-left: 7px; font-size: 12px;"><span style="font-size: 12px; font-weight: bold;">
-                        I Vow to Thee my Country (Piano and Violin)</span>
-                    <br>
-                    <br>
-                    This is a live performance during the PAM Joint session at the Technical University
-                    of Kenya on the 7th of February 2021.
-                </p>
 
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic" style="border:1px solid grey; height:200px; margin-top:25px; background: url('images/IMG-20210213-WA0014.jpg') 0 0; background-size: cover;">
 
                     </div>
                 </a>
@@ -501,17 +527,8 @@ session_start();
             <p style="text-transform: uppercase;text-align: center; font-weight: bold; font-size: 14px;">by the PAM Orchestra</p>
             <div class="inner">
                 <div class="vr"></div>
-                <h5 style="margin: 0;margin-left: 7px; color: rgb(0, 110, 255);">YouTube</h5>
-                <p style="margin-top: 0;margin-left: 7px; font-size: 12px;"><span style="font-size: 12px; font-weight: bold;">
-                        I Vow to Thee my Country (Piano and Violin)</span>
-                    <br>
-                    <br>
-                    This is a live performance during the PAM Joint session at the Technical University
-                    of Kenya on the 7th of February 2021.
-                </p>
-
                 <a href="#youtube">
-                    <div class="place_pic" style="background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
+                    <div class="place_pic" style="border:1px solid grey; height:200px; margin-top:25px; background: url('images/boy-984293__340.webp') 0 0; background-size: cover;">
 
                     </div>
                 </a>
@@ -536,12 +553,23 @@ session_start();
 
                 </p>
             </div>
-            <form action="#java" class="box" style="float: left;">
+            <form action="index.php" method="POST" class="box" style="float: left;">
                 <h4>Comment:</h4>
-                <input type="text" class="text" placeholder="share with us..." />
-                <input type="email" class="email" placeholder="Enter your Email..">
+                <input type="text" name="comment" class="text" placeholder="share with us..." />
+                <input type="email" name="comm_email" class="email" placeholder="Enter your Email..">
                 <button type="submit" class="button">SEND</button>
             </form>
+            <?php
+            $comm_email = $_POST['comm_email'];
+            $comment = $_POST['comment'];
+            $to = 'sheltonnito@gmail.com';
+            $body = '';
+
+            $body .= 'from:' . $comm_email . '\r\n';
+            $body .= 'message:' . $comment . '\r\n';
+
+            mail($to, 'test', $body)
+            ?>
         </div>
         <div class="vertical_bar">
             <nav>
@@ -631,7 +659,7 @@ session_start();
             mark2.style.background = 'rgba(255, 255, 255, 0.4)'
             mark3.style.background = 'rgba(255, 255, 255, 0.4)'
 
-            if (window.screen.width > 400) {
+            if (window.screen.width > 600) {
                 showback.style.backgroundPosition = "0 -200px"
             }
         }
@@ -647,7 +675,7 @@ session_start();
 
 
             change.innerHTML = "<i>~ best qualified tutors ~</i>"
-            if (window.screen.width > 400) {
+            if (window.screen.width > 600) {
                 showback.style.backgroundPosition = "0 -200px"
             }
         }
@@ -662,7 +690,7 @@ session_start();
             mark2.style.background = 'white'
             mark3.style.background = 'rgba(255, 255, 255, 0.4)'
 
-            if (window.screen.width > 400) {
+            if (window.screen.width > 600) {
                 showback.style.backgroundPosition = "0 0"
             }
 
@@ -678,7 +706,7 @@ session_start();
             mark2.style.background = 'rgba(255, 255, 255, 0.4)'
             mark3.style.background = 'white'
 
-            if (window.screen.width > 400) {
+            if (window.screen.width > 600) {
                 showback.style.backgroundPosition = "0 -200px"
             }
         }
@@ -692,6 +720,7 @@ session_start();
     var int_versity = document.getElementById('int_versity');
     var upload_message = document.getElementById('upload_message');
     var reg_form = document.getElementById('reg_form');
+    var help_drop = document.getElementById('help_drop')
 
     function disp_versity() {
         int_versity.style.display = 'block';
@@ -702,6 +731,7 @@ session_start();
         int_versity.style.display = 'none';
         tt_overlay.style.display = 'none';
         reg_form.style.display = 'none';
+        help_drop.style.display = 'none'
         upload_message.style.display = 'none';
     }
 
@@ -713,7 +743,7 @@ session_start();
     }
     //disabled pages
     function disabled() {
-        alert('sorry, the site is still under construction')
+        alert('sorry, this site is locked')
 
     }
 
